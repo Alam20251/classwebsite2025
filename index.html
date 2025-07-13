@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<!--
+	Eventually by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Tokyo Travel Guide</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="assets/js/main.js"></script>
+
+
+	
+
+
+	</head>
+	<body class="is-preload">
+	<h1 id="welcome-message">Welcome</h1>
+		<!-- Header -->
+		<header id="header">
+			<h1>Tokyo Travel Guide</h1>
+			<p>A personal guide to my favorite places in Tokyo. Built using the 
+				<a href="https://html5up.net/eventually" target="_blank">HTML5 UP 'Eventually' template</a>.
+			</p>
+<a href="akihabara.html" class="button">Explore Akihabara</a>
+<a href="shibuya.html" class="button">Explore Shibuya</a>
+			
+			<h2>What's your favorite place in Tokyo?</h2>
+			<input type="text" id="favPlace" placeholder="e.g., Shibuya, Akihabara">
+			<button onclick="showPlace()">Submit</button>
+			<p id="output" style="margin-top: 10px; font-weight: bold;"></p>
+
+				<script>
+				function showPlace() {
+					let place = document.getElementById("favPlace").value;
+					document.getElementById("output").innerText = place + " is an amazing place!";
+				}
+			</script>
+		</header>
+
+		
+		
+		
+		<!-- Footer -->
+		<footer id="footer">
+			<ul class="icons">
+				<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+				<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+				<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+				
+			</ul>
+			<ul class="copyright">
+				<li>&copy; Tokyo Travel Guide.</li>
+				<li>Credits: <a href="http://html5up.net">HTML5 UP</a></li>
+				<li>Student ID: 23229509 | Name: Alam Mahfuzul</li> <!-- Requirement b -->
+			</ul>
+		</footer>
+
+		<!-- Scripts -->
+		<script src="assets/js/main.js"></script>
+		<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const welcomeEl = document.getElementById('welcome-message');
+    if (!welcomeEl) return;
+
+    const hour = new Date().getHours();
+    let message = "Welcome";
+
+    if (hour < 12) {
+      message = "Good morning!";
+    } else if (hour < 18) {
+      message = "Good afternoon!";
+    } else {
+      message = "Good evening!";
+    }
+
+    welcomeEl.textContent = message;
+  });
+</script>
+
+	</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="stylesheet" href="assets/css/main.css">
+
+  <title>Akihabara Highlights</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="is-preload">
+<body>
+<!-- Slideshow Background -->
+<div id="bg">
+  <div style="background-image: url('images/akiba1.jpg')"></div>
+  <div style="background-image: url('images/akiba2.jpg')"></div>
+  <div style="background-image: url('images/akiba3.jpg')"></div>
+</div>
+
+  <header id="header">
+    <h1>Akihabara Spots</h1>
+    <p>Here are some cool places to check out in Akihabara.</p>
+  </header>
+  <script src="assets/js/akihabara.js"></script>
+
+
+
+  <section>
+    <h2>Top Picks</h2>
+    <ul>
+      <li>Gachapon Hall</li>
+      <li>Radio Kaikan</li>
+      <li>Super Potato (retro games)</li>
+      <li>Don Quijote Akihabara</li>
+    </ul>
+    <a href="index.html" class="button">Back to Home</a>
+	 <a href="shibuya.html" class="button">Go to Shibuya</a>
+  </section>
+
+  <footer id="footer">
+    <p>23229509 - Alam Mahfuzul</p>
+  </footer>
+  <script>
+	(function() {
+		var settings = {
+			images: {
+				'images/akiba1.jpg': 'center',
+				'images/akiba2.jpg': 'center',
+				'images/akiba3.jpg': 'center'
+			},
+			delay: 6000
+		};
+
+		var pos = 0, lastPos = 0,
+			$wrapper, $bgs = [], $bg,
+			k;
+
+		$wrapper = document.createElement('div');
+		$wrapper.id = 'bg';
+		document.body.appendChild($wrapper);
+
+		for (k in settings.images) {
+			$bg = document.createElement('div');
+			$bg.style.backgroundImage = 'url("' + k + '")';
+			$bg.style.backgroundPosition = settings.images[k];
+			$wrapper.appendChild($bg);
+			$bgs.push($bg);
+		}
+
+		$bgs[pos].classList.add('visible');
+		$bgs[pos].classList.add('top');
+
+		if ($bgs.length == 1)
+			return;
+
+		window.setInterval(function() {
+			lastPos = pos;
+			pos++;
+
+			if (pos >= $bgs.length)
+				pos = 0;
+
+			$bgs[lastPos].classList.remove('top');
+			$bgs[pos].classList.add('visible');
+			$bgs[pos].classList.add('top');
+
+			window.setTimeout(function() {
+				$bgs[lastPos].classList.remove('visible');
+			}, 1000);
+
+		}, settings.delay);
+	})();
+</script>
+
+</body>
+</html>
